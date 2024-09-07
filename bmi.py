@@ -1,5 +1,5 @@
-heigh=int(input("請輸入身高,單位為(公分):"))
-weight=int(input("請輸入體重,單位為(公斤):"))
+heigh=float(input("請輸入身高,單位為(公分):"))
+weight=float(input("請輸入體重,單位為(公斤):"))
 
 bmi=round(weight/(heigh/100)**2,5)
 print(f"您的BMI是{bmi}")
