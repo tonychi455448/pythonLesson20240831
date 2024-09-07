@@ -7,6 +7,6 @@ print(id(a))
 a=55
 print(id(a))
 
-
+print("hello python")
 
 del a
