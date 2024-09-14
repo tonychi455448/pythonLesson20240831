@@ -1,4 +1,4 @@
-while True:
+def input_data():
   while True:
     try:
         heigh=float(input("請輸入身高,單位為(公分):"))
@@ -20,7 +20,10 @@ while True:
      except Exception as e:
         print(f'輸入錯誤{weight}')
         continue
-    
+  return (heigh,weight)
+
+while True:
+  heigh,weight=input_data()
   bmi=round(weight/(heigh/100)**2,5)
   print(f"您的BMI是{bmi}")
 
