@@ -1,3 +1,4 @@
+#輸入身高、體重
 def input_data()->tuple[int,int]:
   while True:
     try:
@@ -22,6 +23,7 @@ def input_data()->tuple[int,int]:
         continue
   return (heigh,weight)
 
+#取得 bmi 狀態
 def get_status(bmi:float)->str:
   if bmi<18.5:
     return "太輕"
@@ -32,13 +34,18 @@ def get_status(bmi:float)->str:
   else:
     return "肥胖"
 
+#計算 bmi = 體重(kg)除身高(m)
+def calculate_bmi(heigh:int,weight:int)->float:
+   bmi=round(weight/(heigh/100)**2,5)
+   return bmi
+
 #主程式
 while True:
-  heigh,weight=input_data()
-  BMI=round(weight/(heigh/100)**2,5)
+  HEIGH,WEIGH=input_data()
+  BMI=calculate_bmi(weight=WEIGH,heigh=HEIGH)
   print(f"您的BMI是{BMI}")
   print(get_status(BMI))
-  
+
   result=input("繼續?(y/n)")
   if result=="n" or result=="N":
     break
