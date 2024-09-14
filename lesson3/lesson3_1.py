@@ -6,3 +6,4 @@ if age<18:
 else:
     print("可以考駕照")
 print("程式執行結束")
+
