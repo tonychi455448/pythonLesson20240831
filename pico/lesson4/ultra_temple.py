@@ -1,12 +1,6 @@
 from machine import Pin
 import utime
 
-#from machine import Timer
-
-#tim = Timer(period=5000, mode=Timer.ONE_SHOT, callback=lambda t:print(1))
-#tim.init(period=2000, mode=Timer.PERIODIC, callback=lambda t:print(2))
-
-
 trigger = Pin(16, Pin.OUT)
 echo = Pin(17, Pin.IN)
 
