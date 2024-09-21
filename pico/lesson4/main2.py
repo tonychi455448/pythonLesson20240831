@@ -9,6 +9,8 @@ green_led.off()
 red_led=Pin(15,Pin.OUT)
 red_led.off()
 
+#button = Pin(14, Pin.IN, Pin.PULL_DOWN)
+
 green_count=0
 red_count=0
 def green_run1(t:Timer):
