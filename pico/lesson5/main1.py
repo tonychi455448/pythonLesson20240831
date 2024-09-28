@@ -10,6 +10,7 @@ greenLED=Pin("LED", Pin.OUT)
 
 #Initial
 greenLED.off()
+switchState=False 
 #redLED.off()
 
 def readTemp(t):
@@ -27,7 +28,14 @@ def switchRedLED(t):
         redLED.toggle()
 '''
 def readADC(t):
-    duty = adc2.read_u16() 
+    global switchState
+    if buttonY.value():
+        switchState=not switchState
+        
+    if switchState==True :
+        duty = adc2.read_u16() 
+    else:
+        duty=0
     pwm.duty_u16(duty)
 
 def readTime(t):
