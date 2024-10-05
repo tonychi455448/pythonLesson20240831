@@ -1,4 +1,5 @@
 from machine import ADC,Timer,Pin,PWM,RTC
+import tools
 
 #Define Pin
 adc1 = machine.ADC(4) # Connect to GP26, which is channel 0
@@ -10,7 +11,8 @@ greenLED=Pin("LED", Pin.OUT)
 
 #Initial
 greenLED.off()
-switchState=False 
+switchState=False
+tools.connect()
 #redLED.off()
 
 def readTemp(t):
@@ -47,3 +49,4 @@ tim2 = Timer(period=500, mode=Timer.PERIODIC, callback=blinkGreenLED)
 #tim3 = Timer(period=500, mode=Timer.PERIODIC, callback=switchRedLED)
 tim4 = Timer(period=100, mode=Timer.PERIODIC, callback=readADC)
 tim5 = Timer(period=1000, mode=Timer.PERIODIC, callback=readTime)
+
