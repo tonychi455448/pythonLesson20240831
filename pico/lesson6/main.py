@@ -39,10 +39,12 @@ def main():
 if __name__ == "__main__":
     #pico_連結電腦時的寫法,要用connect
     try:
-        #tools.connect()
+        tools.connect()
         pass
     except RuntimeError as e:
         print(f"{{e}")
+    except Exception:
+        print("未知錯誤")
     else:
         #sensor setup
         adc = ADC(4) #內建溫度感測器
