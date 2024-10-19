@@ -3,7 +3,14 @@ import csv
 from datetime import datetime
 import paho.mqtt.client as mqtt
 
-def saveData(topic,value):
+def saveData(topic:str,value):
+    '''
+    #1. 檢查是否有 data 資料夾，沒有就建立 data 資料夾
+    #2. 取得今天日期，如果沒有今天日期.csv，就建立今天日期.csv
+    #3. 將參數的資料儲存至csv檔案內
+    #parameter 1 : topic:str -> 訂閱資料名稱
+    #parameter 2 : value:int or float -> 訂閱資料數值
+    '''
     root_dir=os.getcwd()
     data_path=os.path.join(root_dir,"data")
 
